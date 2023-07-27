@@ -1,3 +1,149 @@
 @import "../../components/GlobalStyles/mixins";
+
 .wrapper {
+}
+.header {
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.nav {
+  display: flex;
+  height: var(--header-height);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include Responsive(smartPhone) {
+    justify-content: space-around;
+  }
+}
+.logo {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #b6d9e7;
+  transition: all linear 0.3s;
+  &::after {
+    display: none;
+  }
+}
+.nav_logo {
+  @include Responsive(smartPhone) {
+    display: none;
+  }
+}
+.menubar-and-logo {
+  display: flex;
+  align-items: center;
+}
+.menu-bar-icon {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  @include Responsive(pc) {
+    display: none;
+  }
+}
+.pc_category {
+  @include Responsive(tablet&smartPhone) {
+    display: none;
+  }
+}
+.category_list {
+  display: flex;
+  list-style: none;
+}
+.category_item {
+  text-align: center;
+  width: 100%;
+}
+.category_link {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--black-color);
+  transition: all linear 0.1s;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.action_button {
+  font-size: 1.4rem;
+  border: 1.5px solid var(--black-color);
+  text-decoration: none;
+  min-width: 70px;
+  color: var(--black-color);
+  padding: 6px 8px;
+  border-radius: 50px;
+  background-color: var(--white-color);
+  margin-left: 10px;
+  user-select: none;
+  &:hover {
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--black-color);
+    transition: all linear 0.1s;
+  }
+}
+.sidebar_menu .category_list {
+  animation: transF linear 0.3s;
+}
+@keyframes transF {
+  from {
+    transform: translateX(-320px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: fadeIn linear 0.2;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.sidebar_logo {
+  margin-top: 30px;
+}
+.sidebar_menu .category_list {
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  align-items: center;
 }

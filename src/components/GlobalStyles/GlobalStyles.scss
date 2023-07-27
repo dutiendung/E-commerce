@@ -1,6 +1,13 @@
 @import "normalize.css";
 @import "./mixins";
+@import "./grid.scss";
+@import url("https://fonts.googleapis.com/css2?family=Gantari:wght@100;200;300;500;600;700&display=swap");
 :root {
+  --primary-color: #ee4266;
+  --white-color: #fff;
+  --black-color: #000;
+  --primary-font: "Gantari", sans-serif;
+  --header-height: 70px;
 }
 * {
   margin: 0;
@@ -11,8 +18,26 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizespeed;
+}
+// Active nav link
+.active {
+  position: relative;
+  color: var(--primary-color);
+  font-weight: 600;
+  @include Responsive(tablet&smartPhone) {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--primary-color);
+      width: 2px;
+      height: 35px;
+    }
+  }
 }
