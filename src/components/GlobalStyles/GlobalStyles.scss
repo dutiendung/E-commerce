@@ -23,6 +23,26 @@ body {
   line-height: 1.5;
   text-rendering: optimizespeed;
 }
+// button
+.btn {
+  font-size: 1.4rem;
+  border: 1.5px solid var(--black-color);
+  text-decoration: none;
+  min-width: 70px;
+  color: var(--black-color);
+  padding: 6px 8px;
+  border-radius: 50px;
+  background-color: var(--white-color);
+  user-select: none;
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  &:hover {
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--black-color);
+    transition: all linear 0.1s;
+  }
+}
 // Active nav link
 .active {
   position: relative;

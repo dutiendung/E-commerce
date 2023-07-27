@@ -1,4 +1,5 @@
 import classNames from "classnames/bind";
+import Products from "../Products";
 import styles from "./Home.module.scss";
 const cx = classNames.bind(styles);
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
           <p>CHECK OUT ALL TRENDS</p>
         </div>
       </div>
+      <Products />
     </div>
   );
 }

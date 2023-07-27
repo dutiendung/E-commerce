@@ -1,0 +1,67 @@
+@import "../../components/GlobalStyles/mixins";
+.wrapper {
+  min-height: 1000px;
+}
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 400;
+  margin: 30px 0;
+}
+.search_input {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  width: 70%;
+  margin: 20px auto;
+  border-radius: 5px;
+  overflow: hidden;
+  caret-color: var(--primary-color);
+  @include Responsive(tablet) {
+    width: 100%;
+  }
+  @include Responsive(smartPhone) {
+    width: 90%;
+  }
+}
+.search_input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  font-size: 1.6rem;
+}
+.search_icon {
+  font-size: 1.7rem;
+  padding: 0 15px;
+  transition: all linear 0.2s;
+  &:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+  }
+}
+.tag {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  @include Responsive(tablet&smartPhone) {
+    width: 90%;
+  }
+}
+.tag_item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 7px !important;
+  font-size: 1.7rem !important;
+}
+.activeTag {
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
+  border-color: transparent !important;
+}
+.product {
+  @include Responsive(smartPhone) {
+    padding: 0 10px;
+  }
+}

@@ -91,19 +91,20 @@ function Header() {
               </div>
             )}
             <div className={cx("action")}>
-              <button className={cx("action_button")}>
+              <button className={cx("action_button", "btn")}>
                 <FontAwesomeIcon
                   icon={faRightToBracket}
                   className={cx("button_icon")}
                 />{" "}
-                Login
+                <div className={cx("action_name")}>Login</div>
               </button>
-              <Link to="/cart" className={cx("action_button")}>
+              <Link to="/cart" className={cx("action_button", "btn")}>
                 <FontAwesomeIcon
                   icon={faCartShopping}
                   className={cx("button_icon")}
                 />{" "}
-                Cart (4)
+                <div className={cx("action_name")}>Cart({4})</div>
+                <span className={cx("total-cart-mobile")}>{4}</span>
               </Link>
             </div>
           </div>
