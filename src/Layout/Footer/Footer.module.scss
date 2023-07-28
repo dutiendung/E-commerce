@@ -1,0 +1,58 @@
+@import "../../components/GlobalStyles/mixins";
+.wrapper {
+  margin-top: 70px;
+  border-top: 4px solid var(--primary-color);
+  @include Responsive(smartPhone) {
+    padding: 0 10px;
+  }
+}
+.footer {
+  margin-top: 60px;
+}
+.footer_col_item {
+  @include Responsive(tablet&smartPhone) {
+    margin-bottom: 50px;
+  }
+}
+.title {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.footer_img {
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.item {
+  font-weight: 300;
+  margin: 10px 0;
+}
+.link {
+  text-decoration: none;
+  color: var(--black-color);
+  transition: all ease 0.2s;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.quick_column {
+  display: flex;
+}
+.fist_column {
+  margin-right: 60px;
+}
+.icon {
+  margin-right: 7px;
+  color: var(--primary-color);
+}
+.copy-right {
+  border-top: 1px solid #ccc;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.heading {
+  margin-top: 30px;
+}
