@@ -3,7 +3,7 @@
 @import "./grid.scss";
 @import url("https://fonts.googleapis.com/css2?family=Gantari:wght@100;200;300;500;600;700&display=swap");
 :root {
-  --primary-color: #ee4266;
+  --primary-color: #ed4267;
   --white-color: #fff;
   --black-color: #000;
   --primary-font: "Gantari", sans-serif;
@@ -44,7 +44,7 @@ body {
   }
 }
 // Active nav link
-.active {
+.active-nav .active {
   position: relative;
   color: var(--primary-color);
   font-weight: 600;
@@ -60,4 +60,46 @@ body {
       height: 35px;
     }
   }
+}
+
+// Pagination
+.pagination {
+  list-style: none;
+  display: flex;
+}
+.pagination .page-item {
+  margin-left: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.pagination .page-item:hover {
+  background-color: #e4e4e4;
+}
+.pagination .page-item a {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 35px;
+  height: 20px;
+  line-height: 1.6rem;
+}
+.pagination .page-item.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+//Scroll bar css
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  background-color: rgba(238, 66, 102, 0.5);
+  border-radius: 100px;
 }

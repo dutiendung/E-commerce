@@ -14,12 +14,12 @@ function Header() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("header")}>
-        <div className={cx("grid wide")}>
+        <div className={cx("grid wide", "active-nav")}>
           <div className={cx("nav")}>
-            <div className={cx("menubar-and-logo")}>
+            <div className={cx("menubar_and_logo")}>
               <FontAwesomeIcon
                 icon={faBars}
-                className={cx("menu-bar-icon")}
+                className={cx("menu_bar_icon")}
                 onClick={() => setShowMenuBar(true)}
               />
               <div className={cx("nav_logo")}>

@@ -1,7 +1,12 @@
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 import ProductCard from "~/components/ProductCard";
 import categoriesService from "~/services/categoriesService";
 import productsService from "~/services/productsService";
@@ -52,6 +57,23 @@ function Products() {
       setInputValue("");
       e.target.blur();
     }
+  };
+  // Paginate
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  useEffect(() => {
+    const endOffset = itemOffset + 8;
+    setCurrentItems(filters.slice(itemOffset, endOffset));
+    if (filters.length > 8) {
+      setPageCount(Math.ceil(filters.length / 8));
+    } else {
+      setPageCount(0);
+    }
+  }, [itemOffset, filters]);
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * 8) % filters.length;
+    setItemOffset(newOffset);
   };
   return (
     <div className={cx("wrapper")}>
@@ -104,8 +126,8 @@ function Products() {
           </div>
           <div className={cx("product")}>
             <div className={cx("row")}>
-              {filters.length > 0 ? (
-                filters.map((product) => (
+              {currentItems.length > 0 ? (
+                currentItems.map((product) => (
                   <div key={product.id} className={cx("col l-3 m-6 c-6")}>
                     <ProductCard product={product} />
                   </div>
@@ -118,6 +140,28 @@ function Products() {
                 </div>
               )}
             </div>
+          </div>
+          <div className={cx("paginate")}>
+            <ReactPaginate
+              nextLabel={<FontAwesomeIcon icon={faAngleRight} />}
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+              pageCount={pageCount}
+              previousLabel={<FontAwesomeIcon icon={faAngleLeft} />}
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-item"
+              previousLinkClassName="page-link"
+              nextClassName="page-item"
+              nextLinkClassName="page-link"
+              breakLabel="..."
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              containerClassName="pagination"
+              activeClassName="active"
+              renderOnZeroPageCount={null}
+            />
           </div>
         </div>
       </div>

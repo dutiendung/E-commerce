@@ -39,14 +39,24 @@
     font-weight: 300;
   }
   @keyframes textFly {
-    from {
+    0% {
       transform: translateX(-100%);
       opacity: 0;
     }
-    to {
-      transform: translateX(0);
-
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateX(10%);
+    }
+    75% {
+      opacity: 0.75;
+      transform: translateX(-10%);
+    }
+    100% {
       opacity: 1;
+      transform: translateX(0);
     }
   }
 }
