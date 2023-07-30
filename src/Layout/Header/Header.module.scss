@@ -162,4 +162,7 @@
   background-color: #fff;
   z-index: 10;
   align-items: center;
+  @include Responsive(smartPhone) {
+    width: 70vw;
+  }
 }

@@ -10,7 +10,7 @@ function ProductDetailLoading() {
           <div className={cx("row")}>
             <div className={cx("col l-6 m-12 c-12")}>
               <div className={cx("product_preview", "product_preview_loading")}>
-                <Skeleton width={350} height={370} />
+                <Skeleton width={300} height={300} />
               </div>
             </div>
             <div className={cx("col l-6 m-12 c-12")}>
