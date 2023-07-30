@@ -7,8 +7,13 @@ function ProductCard({ product }) {
     <div className={cx("wrapper")}>
       <div className={cx("container")}>
         <div className={cx("product-card")}>
-          <img className={cx("product_img")} src={product.image} alt="" />
-
+          <Link to={`/product/${product.id}`}>
+            <img
+              className={cx("product_img")}
+              src={product.image}
+              alt={product.title}
+            />
+          </Link>
           <div className={cx("title")}>{product.title}</div>
           <div className={cx("price")}>$ {product.price}</div>
           <Link className={cx("buy_btn", "btn")}>Buy now</Link>

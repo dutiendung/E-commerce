@@ -23,7 +23,7 @@
 }
 .logo {
   font-size: 2.4rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--primary-color);
   text-decoration: none;
   text-shadow: 1px 1px 1px #b6d9e7;
@@ -126,6 +126,7 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.2);
   animation: fadeIn linear 0.2;
+  z-index: 1;
 }
 @keyframes fadeIn {
   0% {

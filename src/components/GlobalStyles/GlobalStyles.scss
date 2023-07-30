@@ -36,11 +36,11 @@ body {
   user-select: none;
   display: inline-block;
   -webkit-tap-highlight-color: transparent;
+  transition: all linear 0.2s;
   &:hover {
     cursor: pointer;
     color: var(--white-color);
     background-color: var(--black-color);
-    transition: all linear 0.1s;
   }
 }
 // Active nav link

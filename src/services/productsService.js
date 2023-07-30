@@ -8,6 +8,14 @@ const productsService = {
       console.log(error);
     }
   },
+  async getById(id) {
+    try {
+      const res = await httpRequest.get(`products/${id}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 export default productsService;
