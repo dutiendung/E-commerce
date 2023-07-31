@@ -6,10 +6,15 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 const cx = classNames.bind(styles);
 function Header() {
+  const cartProduct = useSelector((state) => state.carts);
+  const totalProduct = cartProduct.reduce((total, product) => {
+    return total + product.quantity;
+  }, 0);
   const [showMenuBar, setShowMenuBar] = useState(false);
   return (
     <div className={cx("wrapper")}>
@@ -103,8 +108,8 @@ function Header() {
                   icon={faCartShopping}
                   className={cx("button_icon")}
                 />{" "}
-                <div className={cx("action_name")}>Cart({4})</div>
-                <span className={cx("total-cart-mobile")}>{4}</span>
+                <div className={cx("action_name")}>Cart({totalProduct})</div>
+                <span className={cx("total-cart-mobile")}>{totalProduct}</span>
               </Link>
             </div>
           </div>

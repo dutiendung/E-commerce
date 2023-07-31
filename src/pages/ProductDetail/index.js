@@ -3,8 +3,10 @@ import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import productsService from "~/services/productsService";
+import { addToCart } from "../Cart/cartSlice";
 import styles from "./ProductDetail.module.scss";
 import ProductDetailLoading from "./ProductDetailLoading";
 const cx = classNames.bind(styles);
@@ -12,12 +14,21 @@ function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     productsService.getById(id).then((data) => {
       setProduct(data);
       setLoading(false);
     });
   }, [id]);
+  // Logic Add to cart
+  const cartProducts = useSelector((state) => state.carts);
+  localStorage.setItem("cart", JSON.stringify(cartProducts));
+  const dispatch = useDispatch();
+  const handleAddToCart = (product) => {
+    const action = addToCart(product);
+    dispatch(action);
+  };
   return (
     <>
       {loading ? (
@@ -95,12 +106,19 @@ function ProductDetail() {
                       {product.description}
                     </div>
                     <div className={cx("action")}>
-                      <button className={cx("add-to-cart", "btn")}>
+                      <button
+                        className={cx("add-to-cart", "btn")}
+                        onClick={() => {
+                          handleAddToCart(product);
+                        }}
+                      >
                         Add to cart
                       </button>
+                      <Link to="/cart">
                       <button className={cx("go-to-cart", "btn")}>
                         Go to cart
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -16,7 +16,9 @@ function ProductCard({ product }) {
           </Link>
           <div className={cx("title")}>{product.title}</div>
           <div className={cx("price")}>$ {product.price}</div>
-          <Link className={cx("buy_btn", "btn")}>Buy now</Link>
+          <Link to={`product/${product.id}`} className={cx("buy_btn", "btn")}>
+            Buy now
+          </Link>
         </div>
       </div>
     </div>
