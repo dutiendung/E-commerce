@@ -1,12 +1,16 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Cart.module.scss";
 import EmptyCart from "./EmptyCart";
 import { addToCart, decrementAnItem } from "./cartSlice";
 const cx = classNames.bind(styles);
 function Cart() {
+  useEffect(() => {
+    document.title = "LA - Cart";
+  }, []);
   const cartProducts = useSelector((state) => state.carts);
   localStorage.setItem("cart", JSON.stringify(cartProducts));
   const totalPrice = cartProducts.reduce((total, product) => {
