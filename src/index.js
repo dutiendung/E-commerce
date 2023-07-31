@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import GlobalStyles from "~/components/GlobalStyles";
 import App from "./App";
 import { store } from "./app/store";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <GlobalStyles>
+      <ToastContainer limit={2} transition={Slide} hideProgressBar={true} />
       <Provider store={store}>
         <App />
       </Provider>

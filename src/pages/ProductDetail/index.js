@@ -5,6 +5,7 @@ import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import productsService from "~/services/productsService";
 import { addToCart } from "../Cart/cartSlice";
 import styles from "./ProductDetail.module.scss";
@@ -26,6 +27,11 @@ function ProductDetail() {
   localStorage.setItem("cart", JSON.stringify(cartProducts));
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
+    toast.info("You have added an item", {
+      position: "bottom-right",
+      autoClose: 3000,
+      theme: "colored",
+    });
     const action = addToCart(product);
     dispatch(action);
   };
@@ -115,9 +121,9 @@ function ProductDetail() {
                         Add to cart
                       </button>
                       <Link to="/cart">
-                      <button className={cx("go-to-cart", "btn")}>
-                        Go to cart
-                      </button>
+                        <button className={cx("go-to-cart", "btn")}>
+                          Go to cart
+                        </button>
                       </Link>
                     </div>
                   </div>
