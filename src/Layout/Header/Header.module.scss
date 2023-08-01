@@ -83,6 +83,9 @@
   @include Responsive(pc) {
     display: none;
   }
+  @include Responsive(tablet) {
+    display: none;
+  }
 }
 
 .action_button {
@@ -116,8 +119,7 @@
   }
 }
 // Account Info
-.btn-login button {
-}
+
 .btn-login {
   display: inline-block;
   &:hover .account-info {

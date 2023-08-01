@@ -1,0 +1,103 @@
+@import "../../components/GlobalStyles/mixins";
+.wrapper {
+  margin-top: var(--header-height);
+}
+.background {
+  width: 100%;
+  height: 65vh;
+  @include Responsive(tablet&smartPhone) {
+    height: unset;
+  }
+}
+.background img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  @include Responsive(tablet&smartPhone) {
+    object-fit: contain;
+  }
+}
+.content {
+  margin-top: 60px;
+  @include Responsive(smartPhone) {
+    padding: 0 10px;
+  }
+}
+.messenger {
+  border: 0.3px solid rgb(196, 192, 192);
+  padding: 30px;
+  height: 450px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & h3 {
+    color: var(--primary-color);
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+  & .inner {
+    flex: 1;
+  }
+}
+.messenger .label {
+  font-weight: 300;
+}
+.messenger .input,
+.messenger .btn-submit,
+.messenger .textarea {
+  width: 100%;
+  font-size: 1.7rem;
+  padding: 7px;
+  border-radius: 5px;
+  outline: none;
+  border: 0.3px solid rgb(196, 192, 192);
+  &:focus {
+    border: 1px solid #000;
+  }
+}
+.form .form-item {
+  margin-bottom: 10px;
+}
+.form .error-msg {
+  color: red;
+}
+.messenger button.btn-submit {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none !important;
+  border-radius: 50px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.address {
+  border: 0.3px solid rgb(196, 192, 192);
+  border-radius: 5px;
+  height: 450px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.address-list {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f3f3ed;
+}
+.address-item {
+  margin-bottom: 30px;
+  & h3 {
+    color: var(--primary-color);
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+  & p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
