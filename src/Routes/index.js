@@ -2,6 +2,7 @@ import About from "~/pages/About";
 import Cart from "~/pages/Cart";
 import Contact from "~/pages/Contact";
 import Home from "~/pages/Home";
+import Login from "~/pages/Login";
 import ProductDetail from "~/pages/ProductDetail";
 import Products from "~/pages/Products";
 const publicRoutes = [
@@ -28,6 +29,10 @@ const publicRoutes = [
   {
     path: "/product/:id",
     component: ProductDetail,
+  },
+  {
+    path: "/login",
+    component: Login,
   },
 ];
 const privateRoutes = [];

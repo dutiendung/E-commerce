@@ -136,7 +136,7 @@ function Products() {
                   </button>
                 ))}
               </div>
-              <div className={cx("product")}>
+              <div className={cx("products")}>
                 <div className={cx("row")}>
                   {currentItems.length > 0 ? (
                     currentItems.map((product) => (

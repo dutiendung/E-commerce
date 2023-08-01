@@ -76,6 +76,15 @@
     color: var(--primary-color);
   }
 }
+.action {
+  position: relative;
+}
+.user-name_mobile {
+  @include Responsive(pc) {
+    display: none;
+  }
+}
+
 .action_button {
   margin: 0 5px;
   position: relative;
@@ -105,6 +114,74 @@
   @include Responsive(smartPhone) {
     display: none;
   }
+}
+// Account Info
+.btn-login button {
+}
+.btn-login {
+  display: inline-block;
+  &:hover .account-info {
+    display: unset;
+  }
+  @include Responsive(smartPhone) {
+    display: none;
+  }
+}
+.btn--no-login {
+  display: inline-block;
+}
+.account-info {
+  position: absolute;
+  left: 22px;
+  top: 110%;
+  background-color: #fff;
+  width: 100px;
+  box-shadow: 1px 1px 2px #e0e0e0;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  display: none;
+}
+.account-info::before {
+  content: "";
+  left: 0;
+  top: -6px;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+}
+
+.account-info-list {
+  padding: 5px 10px;
+  list-style: none;
+  text-transform: none;
+}
+.account-info-item {
+  color: #000;
+  padding: 5px;
+  cursor: pointer;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.account-info-item a {
+  color: #000;
+  text-decoration: none;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.account-info-mobile {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.account-info-mobile .category_link {
+  font-size: 1.7rem;
+}
+.account-info-mobile .user-name {
+  font-size: 2rem;
+  font-weight: 500;
 }
 .sidebar_menu .category_list {
   animation: transF linear 0.3s;
