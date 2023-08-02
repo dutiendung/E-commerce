@@ -144,7 +144,7 @@ function Header() {
               )}
               <div className={isLogin ? cx("btn-login") : cx("btn--no-login")}>
                 <Link to={!isLogin && "/login"}>
-                  <button className={cx("action_button", "btn")}>
+                  <div className={cx("action_button", "btn")}>
                     <FontAwesomeIcon
                       icon={faRightToBracket}
                       className={cx("button_icon")}
@@ -154,24 +154,24 @@ function Header() {
                     ) : (
                       <div className={cx("action_name")}>Log in</div>
                     )}
-                  </button>
-                </Link>
-                {isLogin && (
-                  <div className={cx("account-info")}>
-                    <ul className={cx("account-info-list")}>
-                      <li className={cx("account-info-item")}>Account</li>
-                      <li className={cx("account-info-item")}>
-                        <Link to="/cart">Collection</Link>
-                      </li>
-                      <li
-                        className={cx("account-info-item")}
-                        onClick={handleLogout}
-                      >
-                        Log out
-                      </li>
-                    </ul>
+                    {isLogin && (
+                      <div className={cx("account-info")}>
+                        <ul className={cx("account-info-list")}>
+                          <li className={cx("account-info-item")}>Account</li>
+                          <li className={cx("account-info-item")}>
+                            <Link to="/cart">Collection</Link>
+                          </li>
+                          <li
+                            className={cx("account-info-item")}
+                            onClick={handleLogout}
+                          >
+                            Log out
+                          </li>
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                )}
+                </Link>
               </div>
 
               <Link to="/cart" className={cx("action_button", "btn")}>

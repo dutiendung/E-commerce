@@ -58,7 +58,7 @@ function Contact() {
       email,
       message,
     };
-    console.log(data);
+    // data handle...
     if (!isValidate) return;
   };
   return (

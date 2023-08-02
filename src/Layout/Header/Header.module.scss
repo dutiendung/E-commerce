@@ -1,7 +1,6 @@
 @import "../../components/GlobalStyles/mixins";
 
-.wrapper {
-}
+
 .header {
   border-bottom: 1px solid #ccc;
   position: fixed;
@@ -95,6 +94,9 @@
     min-width: 35px !important;
     line-height: 20px;
   }
+  &:hover .account-info {
+    display: unset;
+  }
 }
 .action_button .total-cart-mobile {
   @include Responsive(pc) {
@@ -125,9 +127,6 @@
 
 .btn-login {
   display: inline-block;
-  &:hover .account-info {
-    display: unset;
-  }
   @include Responsive(smartPhone) {
     display: none;
   }

@@ -34,7 +34,7 @@ function SliderHomeLoading() {
             </div>
             {/* Mobile */}
             <div className={cx("mobile-loading", "col", "l-0", "m-0", "c-12")}>
-              <Skeleton height={407} width={360} />
+              <Skeleton height={407} width={330} />
             </div>
           </div>
         </div>
