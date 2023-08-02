@@ -88,6 +88,27 @@ body {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+// Slider
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-prev::before {
+  color: #ccc !important;
+  font-size: 3rem !important;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+.slick-next::before {
+  color: #ccc !important;
+  font-size: 3rem !important;
+}
+.slick-slide img {
+  display: unset !important;
+}
 //Scroll bar css
 html *::-webkit-scrollbar {
   border-radius: 0;

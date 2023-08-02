@@ -1,8 +1,9 @@
 import httpRequest from "~/utils/httpRequest";
 const productsService = {
-  async getAll() {
+  async getAll(params) {
     try {
-      const res = await httpRequest.get("products");
+      const url = "/products";
+      const res = await httpRequest.get(url, { params });
       return res.data;
     } catch (error) {
       console.log(error);

@@ -1,7 +1,9 @@
 @import "../../components/GlobalStyles/mixins";
+
 .wrapper {
   margin-top: var(--header-height);
 }
+
 .bgr {
   background-image: url(../../assets/bgr/bgr.jpg);
   height: 80vh;
@@ -15,6 +17,7 @@
       left: 3%;
     }
   }
+
   @include Responsive(smartPhone) {
     .bgr__intro {
       top: 25vh;
@@ -59,4 +62,20 @@
       transform: translateX(0);
     }
   }
+}
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 400;
+  margin-top: 30px;
+}
+// Slider
+.wrapper_slider_loading{
+  margin-top: 30px;
+}
+.slider-item {
+  padding: 0 10px 10px 10px;
+}
+.mobile-loading{
+  text-align: center;
 }

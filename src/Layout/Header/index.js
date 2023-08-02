@@ -106,13 +106,17 @@ function Header() {
                   </li>
                   {isLogin && (
                     <div className={cx("account-info-mobile")}>
-                      <li className={cx("category_item", "user-name")}>
+                      <li
+                        className={cx(
+                          "category_link",
+                          "category_item",
+                          "user-name"
+                        )}
+                      >
                         {current.name}
                       </li>
                       <li className={cx("category_item")}>
-                        <NavLink className={cx("category_link")} to="/account">
-                          Account
-                        </NavLink>
+                        <p className={cx("category_link")}>Account</p>
                       </li>
                       <li className={cx("category_item")}>
                         <NavLink className={cx("category_link")} to="/cart">

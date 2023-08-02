@@ -1,5 +1,6 @@
 @import "../../components/GlobalStyles/mixins";
 .wrapper {
+  margin-top: calc(var(--header-height) + 30px);
   min-height: 700px;
 }
 .title {
@@ -75,7 +76,7 @@
   justify-content: center;
   margin-top: 40px;
 }
-// Loading 
-.product_loading{
+// Loading
+.product_loading {
   margin-top: 30px;
 }
