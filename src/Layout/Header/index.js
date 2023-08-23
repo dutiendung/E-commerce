@@ -7,7 +7,7 @@ import firebase from "firebase/compat/app";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { logout } from "~/pages/Login/userSlice";
@@ -17,9 +17,11 @@ function Header() {
   const userData = useSelector((state) => state.user);
   const { current, isLogin } = userData;
   const cartProduct = useSelector((state) => state.carts);
-  const totalProduct = cartProduct.reduce((total, product) => {
-    return total + product.quantity;
-  }, 0);
+
+  const totalProduct = useMemo(() => {
+    return cartProduct.reduce((total, product) => total + product.quantity, 0);
+  }, [cartProduct]);
+
   const [showMenuBar, setShowMenuBar] = useState(false);
 
   const dispatch = useDispatch();
@@ -27,6 +29,7 @@ function Header() {
     dispatch(logout());
     firebase.auth().signOut();
     localStorage.removeItem("firebaseRememberAccount");
+    localStorage.removeItem("firebaseRememberAccountNotGG");
   };
   return (
     <div className={cx("wrapper")}>

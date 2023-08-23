@@ -53,56 +53,57 @@ function Login() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("grid wide")}>
-        <div className={cx("title")}>
-          <h1>Login Form</h1>
-          <p>or login with social accounts</p>
-        </div>
-        <form className={cx("form_login")}>
-          <label className={cx("form_label")} htmlFor="username">
-            Your Username
-          </label>
-          <br />
-          <input
-            value={username}
-            className={cx("form_input")}
-            id="username"
-            placeholder="Enter your name"
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-          <p className={cx("form_errorMsg")}>{errorMsg.usernameInput}</p>
-          <label className={cx("form_label")} htmlFor="password">
-            Your Password
-          </label>
-          <input
-            type="password"
-            value={password}
-            className={cx("form_input")}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            id="password"
-            placeholder="Enter your password"
-          />
-          <p className={cx("form_errorMsg")}>{errorMsg.usernameInput}</p>
-          <input
-            className={cx("form_submit")}
-            type="submit"
-            value="Submit"
-            onClick={handleLoginSubmit}
-          />
-          <div className={cx("form_question")}>
-            <span>Not a member yet?</span>{" "}
-            <Link className={cx("form_link")} to="/register">
-              Register
-            </Link>
+        <div className={cx("form_wrap")}>
+          <div className={cx("title")}>
+            <h1>Login Form</h1>
+            <p>or login with social accounts</p>
           </div>
-        </form>
-        <StyledFirebaseAuth
-          uiConfig={uiConfig}
-          firebaseAuth={firebase.auth()}
-        />
+          <form className={cx("form_login")}>
+            <label className={cx("form_label")} htmlFor="username">
+              Your Username
+            </label>
+            <input
+              value={username}
+              className={cx("form_input")}
+              id="username"
+              placeholder="Enter your name"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
+            <p className={cx("form_errorMsg")}>{errorMsg.usernameInput}</p>
+            <label className={cx("form_label")} htmlFor="password">
+              Your Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              className={cx("form_input")}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              id="password"
+              placeholder="Enter your password"
+            />
+            <p className={cx("form_errorMsg")}>{errorMsg.usernameInput}</p>
+            <input
+              className={cx("form_submit")}
+              type="submit"
+              value="Submit"
+              onClick={handleLoginSubmit}
+            />
+            <div className={cx("form_question")}>
+              <span>Not a member yet?</span>{" "}
+              <Link className={cx("form_link")} to="/register">
+                Register
+              </Link>
+            </div>
+          </form>
+          <StyledFirebaseAuth
+            uiConfig={uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+        </div>
       </div>
     </div>
   );

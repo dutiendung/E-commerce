@@ -1,3 +1,80 @@
+@import "../../components/GlobalStyles/mixins";
 .wrapper {
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + 50px);
+}
+
+.form_wrap {
+  width: 450px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1px 1px #e2dfdf;
+  margin-top: 4rem;
+  padding: 3rem 3.4rem;
+  @include Responsive(tablet&smartPhone) {
+    width: 95%;
+  }
+}
+.form_icon {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 4rem;
+  width: 50px;
+}
+.form_login {
+}
+.form_label {
+  font-size: 1.6rem;
+  font-weight: 350;
+}
+.form_input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 44px;
+  margin-top: 5px;
+  font-size: 1.5rem;
+  caret-color: var(--primary-color);
+  border: 0.3px solid rgb(138, 135, 135);
+}
+.form_errorMsg {
+  color: red;
+  margin-bottom: 15px;
+}
+.form_submit {
+  width: 100%;
+  border-radius: 44px;
+  font-size: 1.7rem;
+  height: 40px;
+  margin: 5px 0 12px 0;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: all ease 0.5s;
+  -webkit-tap-highlight-color: transparent;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.form_question {
+  margin-left: 12px;
+}
+.form_link {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+//Register Done
+.register_done {
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+.register_done .title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.register_done .name {
+  color: var(--primary-color);
 }

@@ -2,17 +2,24 @@
 .wrapper {
   margin-top: calc(var(--header-height) + 30px);
 }
+.form_wrap {
+  width: 450px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1px 1px #e2dfdf;
+  margin-top: 4rem;
+  padding: 3rem 3.4rem;
+  @include Responsive(tablet&smartPhone) {
+    width: 95%;
+  }
+}
 .title {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
+
 .form_login {
-  width: 300px;
-  margin: 0 auto;
-  @include Responsive(tablet&smartPhone) {
-    width: 100%;
-    padding: 0 10px;
-  }
 }
 .form_label {
   font-size: 1.6rem;
@@ -30,27 +37,27 @@
 }
 .form_errorMsg {
   color: red;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .form_submit {
   width: 100%;
   border-radius: 44px;
   font-size: 1.7rem;
   height: 40px;
-  margin: 5px 0 10px 0;
+  margin: 5px 0 12px 0;
   background-color: var(--primary-color);
   border: none;
   outline: none;
   color: var(--white-color);
   cursor: pointer;
   transition: all ease 0.5s;
+  -webkit-tap-highlight-color: transparent;
   &:hover {
     opacity: 0.8;
   }
 }
 .form_question {
   margin-left: 12px;
-  margin-top: 10px;
 }
 .form_link {
   text-decoration: none;

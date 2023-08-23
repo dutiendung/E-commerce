@@ -8,11 +8,17 @@ export const getMe = createAsyncThunk("user/getUser", async () => {
 
 const userSlice = createSlice({
   name: "user",
-  initialState: {
+  initialState: JSON.parse(
+    localStorage.getItem("firebaseRememberAccountNotGG")
+  ) || {
     current: {},
     isLogin: false,
   },
   reducers: {
+    login: (state, action) => {
+      state.isLogin = true;
+      state.current = { ...action.payload };
+    },
     logout: (state) => {
       state.isLogin = false;
       state.current = {};
@@ -31,5 +37,5 @@ const userSlice = createSlice({
   },
 });
 const { actions, reducer } = userSlice;
-export const { logout } = actions;
-export default userSlice;
+export const { logout, login } = actions;
+export default reducer;

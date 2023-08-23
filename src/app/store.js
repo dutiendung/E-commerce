@@ -5,6 +5,6 @@ import userSlice from "~/pages/Login/userSlice";
 export const store = configureStore({
   reducer: {
     carts: cartSlice,
-    user: userSlice.reducer,
+    user: userSlice,
   },
 });
