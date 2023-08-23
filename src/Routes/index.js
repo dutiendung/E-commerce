@@ -5,6 +5,7 @@ import Home from "~/pages/Home";
 import Login from "~/pages/Login";
 import ProductDetail from "~/pages/ProductDetail";
 import Products from "~/pages/Products";
+import Register from "~/pages/Register/Register";
 const publicRoutes = [
   {
     path: "/",
@@ -33,6 +34,10 @@ const publicRoutes = [
   {
     path: "/login",
     component: Login,
+  },
+  {
+    path: "/register",
+    component: Register,
   },
 ];
 const privateRoutes = [];
