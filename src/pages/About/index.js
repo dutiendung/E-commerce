@@ -7,6 +7,7 @@ import styles from "./About.module.scss";
 const cx = classNames.bind(styles);
 function About() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "LA - About";
   }, []);
   return (

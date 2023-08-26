@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import styles from "./Register.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/fontawesome-free-regular";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../Login/userSlice";
 import RegisterDone from "./RegisterDone";
@@ -10,14 +10,16 @@ import { toast } from "react-toastify";
 const cx = classNames.bind(styles);
 function Register() {
   const isLogin = useSelector((state) => state.user.isLogin);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "LA - Register";
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateAll()) {

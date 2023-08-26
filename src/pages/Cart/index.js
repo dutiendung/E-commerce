@@ -9,6 +9,7 @@ import { addToCart, decrementAnItem } from "./cartSlice";
 const cx = classNames.bind(styles);
 function Cart() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "LA - Cart";
   }, []);
   const cartProducts = useSelector((state) => state.carts);

@@ -5,6 +5,7 @@ import styles from "./Contact.module.scss";
 const cx = classNames.bind(styles);
 function Contact() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "LA - Contact";
   }, []);
 

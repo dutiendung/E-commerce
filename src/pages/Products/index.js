@@ -22,6 +22,7 @@ function Products() {
   const [filters, setFilter] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "LA - Products";
     productsService.getAll().then((data) => {
       setProducts(data);

@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 const cx = classNames.bind(styles);
 function Login() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "LA - Login";
   }, []);
   const [username, setUsername] = useState("");

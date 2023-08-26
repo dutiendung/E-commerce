@@ -17,6 +17,9 @@ function ProductDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
     productsService.getById(id).then((data) => {
       setProduct(data);
       setLoading(false);
