@@ -14,15 +14,14 @@ const cx = classNames.bind(styles);
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    document.title = product.title || "LA COLLECTION";
+  }, [product]);
   useEffect(() => {
     productsService.getById(id).then((data) => {
       setProduct(data);
-      setLoading(false);
     });
   }, [id]);
   // Logic Add to cart
@@ -30,17 +29,19 @@ function ProductDetail() {
   localStorage.setItem("cart", JSON.stringify(cartProducts));
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
-    toast.info("You have added an item", {
-      position: "bottom-right",
-      autoClose: 3000,
-      theme: "colored",
-    });
     const action = addToCart(product);
-    dispatch(action);
+    if (dispatch(action)) {
+      toast.info("You have added an item", {
+        position: "bottom-right",
+        autoClose: 3000,
+        theme: "colored",
+      });
+    }
   };
+
   return (
     <>
-      {loading ? (
+      {Object.keys(product).length === 0 ? (
         <ProductDetailLoading />
       ) : (
         <div className={cx("wrapper")}>

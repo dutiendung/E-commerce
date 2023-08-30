@@ -1,11 +1,11 @@
-@import '../../components/GlobalStyles/mixins';
+@import "../../components/GlobalStyles/mixins";
 .wrapper {
   margin-top: calc(var(--header-height) + 30px);
 }
 .container {
-    @include Responsive(smartPhone){
-        padding: 0 10px;
-    }
+  @include Responsive(smartPhone) {
+    padding: 0 10px;
+  }
 }
 .heading {
   text-align: center;
@@ -37,5 +37,5 @@
   text-align: justify;
 }
 .conclusion {
-    text-align: right;
+  text-align: right;
 }

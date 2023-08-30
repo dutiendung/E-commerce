@@ -7,6 +7,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import { publicRoutes } from "./Routes";
 import { getMe } from "./pages/Login/userSlice";
+import ScrollButton from "./components/ScrollButton";
+import NotFound from "./components/NotFound/NotFound";
 
 // Configure Firebase.
 const config = {
@@ -43,23 +45,26 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          {publicRoutes.map((route, index) => {
-            let Page = route.component;
-            return (
-              <Route
-                key={index}
-                path={route.path}
-                element={<Layout>{<Page />}</Layout>}
-              />
-            );
-          })}
-          <Route path="*" element={<p> 404!</p>} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <Router>
+        <div className="App">
+          <Routes>
+            {publicRoutes.map((route, index) => {
+              let Page = route.component;
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={<Layout>{<Page />}</Layout>}
+                />
+              );
+            })}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
+      <ScrollButton />
+    </>
   );
 }
 
